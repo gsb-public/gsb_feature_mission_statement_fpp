@@ -1,0 +1,35 @@
+<?php
+/**
+ * @file
+ * Code for the GSB Feature Mission Statement FPP feature.
+ */
+
+include_once 'gsb_feature_mission_statement_fpp.features.inc';
+
+/**
+ * Implements hook_entity_alter().
+ */
+function gsb_feature_mission_statement_fpp_entity_info_alter(&$entity_info) {
+  $entity_info['fieldable_panels_pane']['bundles']['mission_statement'] = array(
+    'label' => t('Mission Statement'),
+    'pane category' => t('GSB panes'),
+    'pane top level' => TRUE, // set to true to make this show as a top level icon
+    'admin' => array(
+      'path' => 'admin/structure/fieldable-panels-panes/manage/%fieldable_panels_panes_type',
+      'bundle argument' => 4,
+      // Note that this has all _ replaced with - from the bundle name.
+      'real path' => 'admin/structure/fieldable-panels-panes/manage/mission-statement',
+      'access arguments' => array('administer fieldable panels panes'),
+    ),
+  );
+}
+/**
+ * Implements template_preprocess_fieldable_panels_pane()
+ */
+function gsb_feature_mission_statement_fpp_preprocess_fieldable_panels_pane (&$variables) {
+  if ($variables['elements']['#bundle'] == 'mission_statement') {
+    $wrapper = entity_metadata_wrapper($variables['elements']['#entity_type'], $variables['elements']['#element']);
+    // Determine the Links style and set corresponding style class for pane.
+    $variables['classes_array'][] = $wrapper->field_text_style->value();
+  }
+}
