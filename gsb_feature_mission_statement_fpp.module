@@ -12,7 +12,7 @@ include_once 'gsb_feature_mission_statement_fpp.features.inc';
 function gsb_feature_mission_statement_fpp_entity_info_alter(&$entity_info) {
   $entity_info['fieldable_panels_pane']['bundles']['mission_statement'] = array(
     'label' => t('Mission Statement'),
-    'pane category' => t('GSB panes'),
+    'pane category' => t('Homepage Elements'),
     'pane top level' => TRUE, // set to true to make this show as a top level icon
     'admin' => array(
       'path' => 'admin/structure/fieldable-panels-panes/manage/%fieldable_panels_panes_type',
@@ -31,5 +31,30 @@ function gsb_feature_mission_statement_fpp_preprocess_fieldable_panels_pane (&$v
     $wrapper = entity_metadata_wrapper($variables['elements']['#entity_type'], $variables['elements']['#element']);
     // Determine the Links style and set corresponding style class for pane.
     $variables['classes_array'][] = $wrapper->field_text_style->value();
+  }
+}
+
+function gsb_feature_mission_statement_fpp_preprocess_panels_add_content_modal(&$vars) {
+  if (!empty($vars['categories']['root']['content']['Mission Statement'])) {
+    $temp = $vars['categories']['root']['content']['Mission Statement'];
+    unset($vars['categories']['root']['content']['Mission Statement']);
+    $vars['categories']['homepage-elements']['content']['Mission Statement'] = $temp;
+    $vars['categories']['homepage-elements']['content']['Mission Statement']['category'] = array(
+      '0' => 'Homepage Elements',
+      '1' => '0'
+    );
+    unset($vars['categories']['homepage-elements']['content']['Mission Statement']['top level']);
+  }
+}
+
+function gsb_feature_mission_statement_fpp_process_panels_add_content_modal(&$vars) {
+  if (!empty($vars['categories']['root']['content']['Mission Statement'])) {
+    $temp = $vars['categories']['root']['content']['Mission Statement'];
+    unset($vars['categories']['root']['content']['Mission Statement']);
+    $vars['categories']['homepage-elements']['content']['Mission Statement'] = $temp;
+    $vars['categories']['homepage-elements']['content']['Mission Statement']['category'] = array(
+      '0' => 'Homepage Elements',
+      '1' => '0'
+    );
   }
 }
