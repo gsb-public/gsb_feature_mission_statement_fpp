@@ -10,7 +10,8 @@
 function gsb_feature_mission_statement_fpp_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'fieldable_panels_pane-mission_statement-field_body'
+  // Exported field_instance:
+  // 'fieldable_panels_pane-mission_statement-field_body'.
   $field_instances['fieldable_panels_pane-mission_statement-field_body'] = array(
     'bundle' => 'mission_statement',
     'custom_add_another' => '',
@@ -96,7 +97,8 @@ function gsb_feature_mission_statement_fpp_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'fieldable_panels_pane-mission_statement-field_text_style'
+  // Exported field_instance:
+  // 'fieldable_panels_pane-mission_statement-field_text_style'.
   $field_instances['fieldable_panels_pane-mission_statement-field_text_style'] = array(
     'bundle' => 'mission_statement',
     'default_value' => array(
@@ -142,7 +144,8 @@ function gsb_feature_mission_statement_fpp_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'fieldable_panels_pane-mission_statement-field_title'
+  // Exported field_instance:
+  // 'fieldable_panels_pane-mission_statement-field_title'.
   $field_instances['fieldable_panels_pane-mission_statement-field_title'] = array(
     'bundle' => 'mission_statement',
     'default_value' => NULL,
