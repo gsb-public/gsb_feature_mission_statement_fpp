@@ -1,7 +1,7 @@
 {
   "name": "gsb/gsb_feature_mission_statement_fpp",
   "description": "The gsb_feature_mission_statement_fpp module",
-  "type": "project",
+  "type": "drupal-custom-module",
   "keywords": ["Drupal", "GSB"],
   "homepage": "https://github.com/gsb-public/gsb_feature_mission_statement_fpp",
   "support": {
