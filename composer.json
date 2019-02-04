@@ -1,0 +1,12 @@
+{
+  "name": "gsb/gsb_feature_mission_statement_fpp",
+  "description": "The gsb_feature_mission_statement_fpp module",
+  "type": "project",
+  "keywords": ["Drupal", "GSB"],
+  "homepage": "https://github.com/gsb-public/gsb_feature_mission_statement_fpp",
+  "support": {
+    "issues": "https://github.com/gsb-public/gsb_feature_mission_statement_fpp/issues",
+    "source": "https://github.com/gsb-public/gsb_feature_mission_statement_fpp.git"
+  },
+  "license": "GPL-2.0-or-later"
+}
